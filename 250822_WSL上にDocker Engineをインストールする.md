@@ -126,7 +126,6 @@ wsl --shutdown
   ```
 
   - ca-certification、curl、gnupgいずれも最新のものがインストール済み、かつ、手動インストールのフラグがついているの意
-
   - 何も新しくアップグレード、インストール、削除されたものはない、今回アップグレードできるものが4つ見つかったけど、指定はされていないのでしていないの意
 
 - 補足：手動インストールのフラグとは？
@@ -221,7 +220,14 @@ wsl --shutdown
   ```
 
   - 意味：`sudo apt-get update`で、APTのリポジトリ設定ファイルをもとに「いま入手可能なパッケージ一覧（パッケージリストともいう）」を更新する
-  - ※APTのリポジトリ設定ファイルを編集したので、その反映のためにこのコマンドは飛ばしてはいけない
+  - ※ APTのリポジトリ設定ファイルを編集したので、その反映のためにこのコマンドは飛ばしてはいけない
+  - 各パッケージの意味:
+    - docker-ce: CEは Community Edition の略。Docker本体のエンジン（dockerdデーモン）。コンテナを作成・管理する中核部分
+    - docker-ce-cli: Dockerを操作するためのコマンドラインツール。docker run や docker ps などのコマンドはこれに含まれる
+    - containerd.io: Docker内部でコンテナを実際に実行するランタイム。Dockerだけでなく、Kubernetesなどでも利用されるコンポーネント
+    - docker-buildx-plugin: docker buildx コマンドを使うためのプラグイン。マルチプラットフォーム対応のビルド（例：Linux/amd64 と Linux/arm64 両方向けのイメージを1回でビルド）に対応
+    - docker-compose-plugin: docker compose コマンドを使うためのプラグイン。複数コンテナをまとめて定義・起動するCompose機能を提供
+  - ※ docker-ce（dockered、デーモン） / docker-ce-cli（docker CLI、クライアント） / containerd.io（containerd、コンテナランタイム）を合わせて、Docker Engineという
 
 ### 7. sudoなしでDockerを使えるように設定する
 
