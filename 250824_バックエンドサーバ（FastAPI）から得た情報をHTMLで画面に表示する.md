@@ -38,6 +38,8 @@ frontend-study_fastapi-test/
 
 ※詳細はこの記事を参照すること
 
+https://zenn.dev/micchi55555/articles/be807d669d6912
+
 2. `.venv`（仮想環境の中）に入る
 
 ```bash
